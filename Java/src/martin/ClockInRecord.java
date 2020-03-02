@@ -44,6 +44,8 @@ public class ClockInRecord {
 	 */
 	public ClockInRecord() {
 		initialize();
+		
+		this.frame.setVisible( true );
 	}
 
 	/**
