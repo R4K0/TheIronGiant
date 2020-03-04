@@ -35,6 +35,7 @@ public class Timetable extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	@SuppressWarnings("serial")
 	public Timetable() {
 		setTitle("Your Shifts 1");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -63,9 +64,11 @@ public class Timetable extends JFrame {
 				"Day", "Working", "Start Time", "End Time"
 			}
 		) {
+			@SuppressWarnings("rawtypes")
 			Class[] columnTypes = new Class[] {
 				Object.class, Boolean.class, Object.class, Object.class
 			};
+			@SuppressWarnings({ "unchecked", "rawtypes" })
 			public Class getColumnClass(int columnIndex) {
 				return columnTypes[columnIndex];
 			}

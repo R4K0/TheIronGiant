@@ -1,4 +1,4 @@
-package martin;
+package sean;
 
 import java.awt.Color;
 import java.awt.EventQueue;
@@ -12,8 +12,8 @@ import javax.swing.JTextPane;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
 
-public class ClockInRecord {
 
+public class ClockInRecordE {
 	public JFrame frame;
 	private JTable table;
 
@@ -24,7 +24,7 @@ public class ClockInRecord {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					ClockInRecord window = new ClockInRecord();
+					ClockInRecordE window = new ClockInRecordE();
 					window.frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -36,7 +36,7 @@ public class ClockInRecord {
 	/**
 	 * Create the application.
 	 */
-	public ClockInRecord() {
+	public ClockInRecordE() {
 		initialize();
 		
 		this.frame.setVisible( true );
@@ -61,16 +61,12 @@ public class ClockInRecord {
 		table.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"", "(Current-Date)", "", null},
-				{"  Employee", "  Clock-In", "  Clock-Out", "  Record"},
-				{"  1", null, null, null},
-				{"  2", null, null, null},
-				{"  3", null, null, null},
-				{"  4", null, null, null},
-				{"  5", null, null, null},
+				{"", "", "(Current-Date)", null,null},
+				{"  Employee", "  Clock-In", "  Clock-Out", "Break Length ",  "Record"},
+				{"  1", null, null, null,null}
 			},
 			new String[] {
-				"Employee", "Clock-In", "Clock-Out", "Link To Record"
+				"Employee", "Clock-In", "Clock-Out","Break Length", "Link To Record"
 			}
 		));
 		table.getColumnModel().getColumn(0).setPreferredWidth(120);
@@ -101,4 +97,5 @@ public class ClockInRecord {
 		JButton btnBack = new JButton("Back");
 		panel_2.add(btnBack);
 	}
+
 }
