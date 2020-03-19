@@ -16,6 +16,7 @@ public class IronGiant {
 
 	private static void InitializeDatabase() throws SQLException {
 		Statement STM = DB.createStatement();
+		
 		STM.execute( "CREATE TABLE IF NOT EXISTS employees ("
 				+ "pps VARCHAR(17) PRIMARY KEY,"
 				+ "first_name VARCHAR(30) NOT NULL,"

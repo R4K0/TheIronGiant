@@ -3,6 +3,8 @@ package martin;
 import java.awt.Color;
 import java.awt.EventQueue;
 import java.awt.Font;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -11,6 +13,12 @@ import javax.swing.JTable;
 import javax.swing.JTextPane;
 import javax.swing.border.LineBorder;
 import javax.swing.table.DefaultTableModel;
+import java.awt.BorderLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import java.awt.GridLayout;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ClockInRecord {
 
@@ -59,15 +67,11 @@ public class ClockInRecord {
 		table = new JTable();
 		table.setFont(new Font("Tahoma", Font.PLAIN, 14));
 		table.setBorder(new LineBorder(new Color(0, 0, 0), 2, true));
+		SimpleDateFormat format = new SimpleDateFormat("dd/MM/yyyy");
 		table.setModel(new DefaultTableModel(
 			new Object[][] {
-				{"", "(Current-Date)", "", null},
-				{"  Employee", "  Clock-In", "  Clock-Out", "  Record"},
-				{"  1", null, null, null},
-				{"  2", null, null, null},
-				{"  3", null, null, null},
-				{"  4", null, null, null},
-				{"  5", null, null, null},
+				{"", format.format( new Date() ), "", null},
+				{"  Employee", "  Clock-In", "  Clock-Out", "  Record"}
 			},
 			new String[] {
 				"Employee", "Clock-In", "Clock-Out", "Link To Record"
@@ -97,8 +101,16 @@ public class ClockInRecord {
 		JPanel panel_2 = new JPanel();
 		panel_2.setBounds(10, 375, 564, 75);
 		frame.getContentPane().add(panel_2);
+		panel_2.setLayout(null);
 		
 		JButton btnBack = new JButton("Back");
+		btnBack.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				new milosz.MainMenu().setVisible( true );
+				frame.dispose();
+			}
+		});
+		btnBack.setBounds(0, 0, 564, 75);
 		panel_2.add(btnBack);
 	}
 }
