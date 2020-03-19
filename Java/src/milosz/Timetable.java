@@ -37,7 +37,7 @@ public class Timetable extends JFrame {
 	 */
 	@SuppressWarnings("serial")
 	public Timetable() {
-		setTitle("Your Shifts 1");
+		setTitle("Your Shifts");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
